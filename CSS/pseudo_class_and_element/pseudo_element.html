@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS</title>
+        <style>
+            p:before{
+                color:red;
+                content:"before 가상 요소 활용"
+            }
+            p:after{
+                color:blue;
+                content:"after 가상 요소 활용"
+            }
+            p:first-line{
+                color:yellow;
+            }
+            p:first-letter{
+                font-size:3em;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipsicing elit, sed do
+            eiusmod tempor indididunt ut labore et dolore magna aliqua.
+        </p>
+    </body>
+</html>
