@@ -3,14 +3,37 @@ html {
 }
 body {
 	margin: 0;
+	/*margin을 없애준다.*/
 }
 div, section, header, footer, p, h1, h2 {
 	box-sizing: border-box;
+	/*border-box로 내부 패딩이나 보더가 width height에 포함되도록 한다?*/
 }
 a {
 	color: royalblue;
 }
 img {
 	max-width: 100%;
+	/*반응형으로 잘 동작하도록 컨테이너가 이미지보다 줄어들었을 때 같이 줄어들 수 있게 max-width를 100%*/
+	/*컨테이너란? 소프트웨어 서비스를 실행하는 데 필요한 특정 버전의 프로그래밍 언어 런타임 및 라이브러리와 같은 종속 항목과 애플리케이션 코드를 포함하는 경량 패키지*/
 	height: auto;
+}
+.global-width{
+	max-width:620px;
+	/*모바일 기기에서는 620px보다 더 줄어들어야 하기 때문에 width가 아닌 max-width*/
+	margin:0 auto;
+	/*좌우를 auto로 해서 가운데 정렬*/
+	padding:0 15px;
+	/*글자 줄였을 때도 좌우 여백을 주기 위함*/
+}
+.graphic-item{/*각각의 이미지에 적용됨*/
+	display:flex;
+	/**/
+	align-items:center;
+	
+	position:absolute;
+	/*이미지를 겹쳐놓기 위해서*/
+	left:0;
+	top:0;
+
 }
