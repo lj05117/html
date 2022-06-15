@@ -26,14 +26,50 @@ img {
 	padding:0 15px;
 	/*글자 줄였을 때도 좌우 여백을 주기 위함*/
 }
+.scroll-graphic{ /*이미지들을 통째로 그룹화 하고 있는 클래스*/
+	position:sticky;
+	/*그림이 특정부위에 고정돼있게 하기 위함*/
+	top:0;
+	/*지정된 위치(브라우저 상단)가 되면 sticky가 적용돼서 이미지가 안올라가고 붙어있게 됨*/
+	height:100vh;
+	/*vh는 부모요소가 아닌 뷰포트의 높이값에 맞춰 상대적인 크기를 반환한다. 숫자가 클 수록 위쪽과 멀어진다.*/
+}
 .graphic-item{/*각각의 이미지에 적용됨*/
 	display:flex;
-	/**/
+	/*화면사이즈에 꽉 차게 하기. 그림 사이즈가 가로로 더 커졌다.*/
 	align-items:center;
-	
+	/*세로방향 가운데 정렬*/
+	justify-content:center;
+	/*가로방향 가운데 정렬*/
 	position:absolute;
 	/*이미지를 겹쳐놓기 위해서*/
 	left:0;
 	top:0;
-
+	width:100%;
+	height:100%;
+}
+.scene-img{
+	max-height:100vh;
+	/*브라우저를 전체화면으로 했을 때 그림의 상단이 브라우저에 잘리는 현상이 있었는데
+	전체화면의 뷰포트 사이즈의 높이에 맞게 max-height가 설정이 돼서 브라우저 크기를 늘리거나 줄여도 그림이 잘리지 않음*/
+}
+.scroll-text{
+	position:relative;
+	/*position의 기본값은 static. 태그의 위치를 변경하고 싶을 때 relative 사용. */
+	/*static이 아니면 z-index를 가지고 있어서 z-index 숫자에 따라 위 아래 구분 할 수 있다.*/
+	/*z-index 설정 안하면 코드 상 아래에 있는 코드가 화면 위로 올라온다.*/
+	/*그림을 감싸는 scroll-graphic보다 말풍선을 감싸는 scroll-text가 아래에 코딩돼있어서 말풍선이 그림 위로 올라온다.*/	
+	padding-bottom:1px;
+	/*상하단 margin 병합 현상 때문*/
+}
+.step{
+	margin-bottom:60vh;
+	/*창사이즈의 60	퍼센트 높이*/
+	padding:0.5rem 1rem;
+	border-radius:10px;
+	/*숫자가 커질수록 모서리를 둥글게 만든다.*/
+	background:rgba(255,255,255,0.8);
+	/*뒤의 숫자가 0에 가까울수록 색이 투명해진다.*/
+	box-shadow:rgba(0,0,0,0.3) 0 0 3px;
+	/*3픽셀정도 퍼지게 만든다.*/
 }
